@@ -1,0 +1,52 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">Command schema</xsd:documentation>
+    </xsd:annotation>
+    <xsd:element name="commands">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="command"
+                             type="Command"
+                             minOccurs="1"
+                             maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="Command">
+        <xsd:sequence>
+            <xsd:element name="commandName" type="commandNameType"/>
+            <xsd:element name="commandClass" type="xsd:string"/>
+        </xsd:sequence>
+
+    </xsd:complexType>
+
+
+    <xsd:simpleType name="commandNameType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SIGN_IN"/>
+            <xsd:enumeration value="WRONG_REQUEST"/>
+            <xsd:enumeration value="ADD_BOOK"/>
+            <xsd:enumeration value="SHOW_ALL_BOOKS"/>
+            <xsd:enumeration value="EDIT_BOOK"/>
+            <xsd:enumeration value="GET_BOOK"/>
+            <xsd:enumeration value="BOOK_AVAILABILITY_STATUS"/>
+            <xsd:enumeration value="HOME_ADDRESS"/>
+            <xsd:enumeration value="EDIT_ADDRESS"/>
+            <xsd:enumeration value="CURRENT_ADDRESS"/>
+            <xsd:enumeration value="USER_REGISTRATION"/>
+            <xsd:enumeration value="USER_EDITED"/>
+            <xsd:enumeration value="ALL_USERS"/>
+            <xsd:enumeration value="GET_USER"/>
+            <xsd:enumeration value="USER_ROLE"/>
+            <xsd:enumeration value="USER_STATUS"/>
+            <xsd:enumeration value="BOOK_RESERVATION"/>
+            <xsd:enumeration value="CANCELLATION_BOOK_RESERVATION"/>
+            <xsd:enumeration value="BOOK_LEAVED_LIBRARY"/>
+            <xsd:enumeration value="BOOK_RETURNED_COMMAND"/>
+            <xsd:enumeration value="REDUCE_ACCESS_LEVEL_COMMAND"/>
+            <xsd:enumeration value="SORTED_BOOKS"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
